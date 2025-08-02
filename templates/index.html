@@ -1,0 +1,521 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Hero Section -->
+<section
+  id="home"
+  class="hero-section text-center text-white"
+  data-aos="fade-up"
+  style="position: relative; height: 90vh"
+>
+  <!-- Background Overlay -->
+  <div class="hero-bg"></div>
+
+  <!-- Foreground Text Container -->
+  <div class="hero-content position-relative z-2 px-3">
+    <h1 class="display-3 fw-bold mb-3">HELLO I'M SWAROOP</h1>
+
+    <p class="lead mb-4 hero-subtext">
+      <span id="typed-text"></span>
+    </p>
+
+    <a
+      href="{{ url_for('static', filename='assets/Swaroop-CV.pdf') }}"
+      target="_blank"
+      class="btn btn-cv btn-lg"
+    >
+      Download CV
+    </a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section py-5" data-aos="fade-up">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Side: About Text -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold mb-3">About Me</h2>
+        <p>
+          I am Swaroop, a B.Tech graduate and full stack web developer
+          specializing in Python, Flask, JavaScript, and cloud projects. My
+          experience comes from real-world projects, demonstrating
+          industry-ready skills, adaptability, and passion for technology.
+        </p>
+        <ul class="about-list mt-3">
+          <li>
+            <i class="fas fa-circle-check text-primary"></i> Python & Flask Web
+            Apps
+          </li>
+          <li>
+            <i class="fas fa-circle-check text-primary"></i> Responsive Frontend
+            using Bootstrap
+          </li>
+          <li>
+            <i class="fas fa-circle-check text-primary"></i> Cloud and Database
+            Integration
+          </li>
+        </ul>
+      </div>
+      <!-- Right Side: Image Box -->
+      <div class="col-lg-6 d-flex justify-content-center">
+        <div class="about-img-box shadow-lg rounded-4 overflow-hidden">
+          <!-- Add relevant image from /static/images/ here -->
+          <img
+            src="{{ url_for('static', filename='images/Swaroop.jpg') }}"
+            alt="Swaroop"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Projects</h2>
+    <!-- Filter Buttons -->
+    <div class="d-flex justify-content-center mb-4">
+      <button
+        class="btn btn-outline-primary me-2 filter-btn active"
+        data-filter="all"
+      >
+        All
+      </button>
+      <button
+        class="btn btn-outline-primary me-2 filter-btn"
+        data-filter="python"
+      >
+        Python
+      </button>
+      <button
+        class="btn btn-outline-primary me-2 filter-btn"
+        data-filter="html"
+      >
+        HTML
+      </button>
+      <button
+        class="btn btn-outline-primary me-2 filter-btn"
+        data-filter="flask"
+      >
+        Flask
+      </button>
+      <button
+        class="btn btn-outline-primary me-2 filter-btn"
+        data-filter="database"
+      >
+        Database
+      </button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="aws">
+        AWS
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="row g-4" id="projects-grid">
+      <!-- Example Project Card -->
+      <div class="col-sm-6 col-md-4 project-card" data-category="python flask">
+        <div class="card project-box shadow position-relative h-100">
+          <div class="project-img img-box">
+            <!-- Add relevant image from /static/images/ here -->
+            <img
+              src="{{ url_for('static', filename='images/ToDO APp.jpg') }}"
+              alt="Project 1"
+              class="card-img-top"
+            />
+            <div
+              class="project-overlay d-flex flex-column justify-content-center align-items-center"
+            >
+              <h5 class="text-white">Flask To Do App</h5>
+              <p class="small text-white mb-2 px-2">
+                A dynamic blog engine with user auth and markdown support.
+              </p>
+              <a
+                href="https://github.com/Swappy514/"
+                target="_blank"
+                class="text-white"
+              >
+                <i class="fab fa-github fa-2x text-white"></i>
+                <p>Click here</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 project-card" data-category="python flask">
+        <div class="card project-box shadow position-relative h-100">
+          <div class="project-img img-box">
+            <!-- Add relevant image from /static/images/ here -->
+            <img
+              src="{{ url_for('static', filename='images/flask-app.jpg') }}"
+              alt="Project 2"
+              class="card-img-top"
+            />
+            <div
+              class="project-overlay d-flex flex-column justify-content-center align-items-center"
+            >
+              <h5 class="text-white">Flask App</h5>
+              <p class="small text-white mb-2 px-2">
+                A dynamic blog engine with user auth and markdown support.
+              </p>
+              <a
+                href="https://github.com/Swappy514/Flask-App"
+                target="_blank"
+                class="text-white"
+              >
+                <i class="fab fa-github fa-2x text-white"></i>
+                <p>Click here</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 project-card" data-category="python">
+        <div class="card project-box shadow position-relative h-100">
+          <div class="project-img img-box">
+            <!-- Add relevant image from /static/images/ here -->
+            <img
+              src="{{ url_for('static', filename='images/Python.jpg') }}"
+              alt="Project 3"
+              class="card-img-top"
+            />
+            <div
+              class="project-overlay d-flex flex-column justify-content-center align-items-center"
+            >
+              <h5 class="text-white">Python-learnig Hub</h5>
+              <p class="small text-white mb-2 px-2">
+                A comprehensive, well-structured Python learning repository —
+                from basics to advanced topics including OOP, recursion, data
+                structures, debugging, and real-world industry examples
+              </p>
+              <a
+                href="https://github.com/Swappy514/python-learning-hub"
+                target="_blank"
+                class="text-white"
+              >
+                <i class="fab fa-github fa-2x text-white"></i>
+                <p>Click here</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 project-card" data-category="html">
+        <div class="card project-box shadow position-relative h-100">
+          <div class="project-img img-box">
+            <!-- Add relevant image from /static/images/ here -->
+            <img
+              src="{{ url_for('static', filename='images/food-munch.png') }}"
+              alt="Project 4"
+              class="card-img-top"
+            />
+            <div
+              class="project-overlay d-flex flex-column justify-content-center align-items-center"
+            >
+              <h5 class="text-white">Food Munch App</h5>
+              <p class="small text-white mb-2 px-2">
+                A complete responsive website developed using the concepts of
+                HTML , CSS , Bootstrap.
+              </p>
+              <a
+                href="https://github.com/Swappy514/food-much"
+                target="_blank"
+                class="text-white"
+              >
+                <i class="fab fa-github fa-2x text-white"></i>
+                <p>Click here</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 project-card" data-category="database">
+        <div class="card project-box shadow position-relative h-100">
+          <div class="project-img img-box">
+            <!-- Add relevant image from /static/images/ here -->
+            <img
+              src="{{ url_for('static', filename='images/smart-grocery.png') }}"
+              alt="Project 5"
+              class="card-img-top"
+            />
+            <div
+              class="project-overlay d-flex flex-column justify-content-center align-items-center"
+            >
+              <h5 class="text-white">SmartGrocery_SQL_Backen App</h5>
+              <p class="small text-white mb-2 px-2">
+                A complete MySQL backend for SmartGrocery—built for hyperlocal
+                e-commerce platforms.
+              </p>
+              <a
+                href="https://github.com/Swappy514/SmartGrocery_SQL_Backend"
+                target="_blank"
+                class="text-white"
+              >
+                <i class="fab fa-github fa-2x text-white"></i>
+                <p>Click here</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat cards for more projects, update data-category and image files -->
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Skills</h2>
+    <div class="row gy-4 justify-content-center">
+      <!-- Each Skill Item -->
+      {% set skills = [ ('fab fa-html5', 'HTML'), ('fab fa-css3-alt', 'CSS'),
+      ('fab fa-js', 'JavaScript'), ('fab fa-python', 'Python'), ('fas
+      fa-database', 'SQL'), ('fas fa-database', 'MySQL'), ('fas fa-database',
+      'SQLite'), ('fas fa-leaf', 'MongoDB'), ('fas fa-fire', 'Firebase'), ('fab
+      fa-bootstrap', 'Bootstrap'), ('fab fa-aws', 'AWS'), ('fab fa-github',
+      'GitHub'), ('fab fa-git-alt', 'Git'), ('fab fa-flask', 'Flask'), ('fas
+      fa-fire-alt', 'Jinja2'), ('fab fa-google', 'PowerBI'), ('fab fa-android',
+      'Flutter'), ('fas fa-paint-brush', 'Canva') ] %} {% for icon, label in
+      skills %}
+      <div
+        class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex flex-column align-items-center"
+      >
+        <div class="skill-icon-box mb-2">
+          <i class="{{ icon }}"></i>
+        </div>
+        <span class="fw-semibold skill-label">{{ label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Education & Certification Section -->
+<section id="education" class="edu-section py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Education & Certifications</h2>
+
+    <div class="edu-cert-tabs mx-auto mb-4 d-flex justify-content-center">
+      <button class="btn tab-btn active me-2" type="button" id="eduTab">
+        Education
+      </button>
+      <button class="btn tab-btn" type="button" id="certTab">
+        Certifications
+      </button>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Education List -->
+      <div class="col-lg-8 edu-cert-content" id="educationContent">
+        <div class="card shadow mb-3">
+          <div class="card-body">
+            <h5 class="card-title mb-2">
+              B.Tech, Computer Science & Engineering
+            </h5>
+            <p class="text mb-1">
+              D. Y. Patil College of Engineering, Talsande
+            </p>
+            <small>2021 – 2025</small>
+          </div>
+        </div>
+        <div class="card shadow mb-3">
+          <div class="card-body">
+            <h5 class="card-title mb-2">Higher Secondary Certificate</h5>
+            <p class="text mb-1">Manere High School & Junior College</p>
+            <small>2020 – 2021</small>
+          </div>
+        </div>
+        <div class="card shadow mb-3">
+          <div class="card-body">
+            <h5 class="card-title mb-2">Secondary School Certificate</h5>
+            <p class="text mb-1">Jesus English Medium School</p>
+            <small>2018 – 2019</small>
+          </div>
+        </div>
+        <!-- Add more education items as needed -->
+      </div>
+
+      <!-- Certifications List (Hidden by Default) -->
+      <div class="col-lg-8 edu-cert-content d-none" id="certificationsContent">
+        <div class="card shadow mb-3">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <h5 class="mb-1">XPM 4.0 Fundamentals</h5>
+              <small class="text">Issued: July 2025</small>
+            </div>
+            <a
+              href="https://certificates.ccbp.in/academy/xpm-4-0-fundamentals?id=NWXWDNRDAX"
+              class="btn btn-outline-primary"
+              target="_blank"
+            >
+              View Certificate
+              <i class="fas fa-arrow-up-right-from-square ms-1"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card shadow mb-3">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <h5 class="mb-1">Responsive Web Development</h5>
+              <small class="text">Issued: June 2025</small>
+            </div>
+            <a
+              href="https://certificates.ccbp.in/academy/build-your-own-responsive-website?id=VTBYRUEYFK"
+              class="btn btn-outline-primary"
+              target="_blank"
+            >
+              View Certificate
+              <i class="fas fa-arrow-up-right-from-square ms-1"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card shadow mb-3">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <h5 class="mb-1">Programming Foundations With Python</h5>
+              <small class="text">Issued: July 2025</small>
+            </div>
+            <a
+              href="https://certificates.ccbp.in/academy/programming-foundations-with-python?id=NZJFQDVOBW"
+              class="btn btn-outline-primary"
+              target="_blank"
+            >
+              View Certificate
+              <i class="fas fa-arrow-up-right-from-square ms-1"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card shadow mb-3">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <h5 class="mb-1">Data Analytics Mega Workshop</h5>
+              <small class="text">Issued: Feb 2024</small>
+            </div>
+            <a
+              href="/static/images/Power-BI.jpg"
+              class="btn btn-outline-primary"
+              target="_blank"
+            >
+              View Certificate
+              <i class="fas fa-arrow-up-right-from-square ms-1"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card shadow mb-3">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <h5 class="mb-1">
+                Building And Deploying Applications On AWS Using EC2, RDS,
+                Route53, S3, And CloudFront
+              </h5>
+              <small class="text">Issued: June 2024</small>
+            </div>
+            <a
+              href="/static/images/AWS_Project_Certificate.jpg"
+              class="btn btn-outline-primary"
+              target="_blank"
+            >
+              View Certificate
+              <i class="fas fa-arrow-up-right-from-square ms-1"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Add more certificates as needed: update link in href -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Contact Me</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form
+          id="contactForm"
+          action="{{ url_for('contact') }}"
+          method="POST"
+          novalidate
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label"
+              >Name <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              required
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label"
+              >Email address <span class="text-danger">*</span></label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              name="phone"
+              placeholder="+91 99999 99999"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label"
+              >Message <span class="text-danger">*</span></label
+            >
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Write your message here..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">
+            Send Message
+          </button>
+        </form>
+        <!-- Container for success/error messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %}
+        <div class="mt-3">
+          {% for category, message in messages %}
+          <div class="alert alert-{{ category }}" role="alert">
+            {{ message }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %} {% endwith %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
